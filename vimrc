@@ -1,6 +1,17 @@
-set number
+set nocompatible number autowrite autowriteall
 
-set autowrite autowriteall
+" don't split above or left
+set splitright splitbelow
+
+" make arrow/h,l keys go on next/prev lines
+set whichwrap+=<,>,[,],h,l
+
+" Indentation; default 4; ftplugin override this, see after/ftplugin
+set autoindent smartindent smarttab shiftwidth=4 softtabstop=4 tabstop=4 expandtab
+
+" waste management
+set undofile undolevels=1000 udir=~/.vim/vimundo
+set dir=~/.vim/vimswapfiles//
 
 " mappings
 let mapleader = ","
@@ -28,7 +39,7 @@ Plug 'honza/vim-snippets', {'frozen': 1}
 
 call plug#end()
 
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+" Trigger configuration.
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"

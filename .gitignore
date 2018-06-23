@@ -1,2 +1,4 @@
 plugs/
 .netrwhist
+vimundo/*
+vimswapfiles/*
