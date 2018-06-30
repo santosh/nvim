@@ -30,12 +30,19 @@ $0
 endsnippet
 
 snippet main "main() (main)"
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
 	${VISUAL}$0
 	return 0;
 }
 endsnippet
+
+# main(void)
+snippet mainn
+	int main(void) {
+		${VISUAL}$0
+		return 0;
+	}
+##
 
 snippet for "for loop (for)"
 for (${2:i} = 0; $2 < ${1:count}; ${3:++$2}) {
