@@ -38,11 +38,11 @@ endsnippet
 
 # main(void)
 snippet mainn
-	int main(void) {
-		${VISUAL}$0
-		return 0;
-	}
-##
+int main(void) {
+	${VISUAL}$0
+	return 0;
+}
+endsnippet
 
 snippet for "for loop (for)"
 for (${2:i} = 0; $2 < ${1:count}; ${3:++$2}) {
@@ -90,13 +90,6 @@ snippet st "struct"
 struct ${1:`!p snip.rv = (snip.basename or "name") + "_t"`} {
 	${0:/* data */}
 };
-endsnippet
-
-snippet fun "function" b
-${1:void} ${2:function_name}($3)
-{
-	${VISUAL}$0
-}
 endsnippet
 
 snippet fund "function declaration" b

@@ -34,20 +34,12 @@ snippet awith
 	async with ${1:expr} as ${2:var}:
 		${0:${VISUAL}}
 # New Class
-snippet cl
+snippet class
 	class ${1:ClassName}(${2:object}):
 		"""${3:docstring for $1}"""
 		def __init__(self, ${4:arg}):
-			${5:super($1, self).__init__()}
+			${5:super(self.__class__, self).__init__()}
 			self.$4 = $4
-			${0}
-snippet cla
-	class ${1:class_name}:
-		"""${0:description}"""
-snippet clai
-	class ${1:class_name}:
-		"""${2:description}"""
-		def __init__(self, ${3:args}):
 			${0}
 # New Function
 snippet def
