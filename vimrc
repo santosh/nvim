@@ -1,5 +1,8 @@
 set nocompatible number autowrite autowriteall
 
+" search as you type
+set incsearch
+
 " don't split above or left
 set splitright splitbelow
 
@@ -7,7 +10,7 @@ set splitright splitbelow
 set whichwrap+=<,>,[,],h,l
 
 " Indentation; default 4; ftplugin override this, see after/ftplugin
-set autoindent smartindent smarttab shiftwidth=4 softtabstop=4 tabstop=4 expandtab
+set autoindent smartindent smarttab shiftwidth=4 softtabstop=4 tabstop=4 expandtab scrolloff=10 pastetoggle=<F7>
 
 " waste management
 set undofile undolevels=1000 udir=~/.vim/vimundo
@@ -50,6 +53,7 @@ noremap <silent> ,cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<
 call plug#begin('~/.vim/plugs/')
 
 Plug 'SirVer/ultisnips'
+Plug 'jiangmiao/auto-pairs'
 Plug 'honza/vim-snippets', {'frozen': 1}
 
 call plug#end()
@@ -58,3 +62,5 @@ call plug#end()
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+colorscheme industry
