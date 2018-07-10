@@ -40,6 +40,10 @@ inoremap <silent> <esc><esc> <esc>:q<cr>
 nnoremap <silent> <esc><esc> :q<cr>
 nnoremap <silent> s :up<cr>
 
+" smart home key
+nnoremap <expr> <Home> (col('.') == matchend(getline('.'), '^\s*')+1 ? '0' : '^')
+imap <Home> <C-o><Home>
+
 nnoremap <leader>v :vsplit ~/.vim/vimrc<cr>
 
 nnoremap <silent> <space> :set hlsearch!<cr>
