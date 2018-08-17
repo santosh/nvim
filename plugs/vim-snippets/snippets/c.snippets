@@ -5,12 +5,6 @@ snippet inc
 # #include "..."
 snippet Inc
 	#include "${1:`vim_snippets#Filename("$1.h")`}"
-# ifndef...define...endif
-snippet ndef
-	#ifndef $1
-	#define ${1:SYMBOL} ${2:value}
-	#endif /* ifndef $1 */
-# define
 snippet def
 	#define
 # ifdef...endif

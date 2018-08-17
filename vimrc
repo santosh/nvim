@@ -16,6 +16,11 @@ set autoindent smartindent smarttab shiftwidth=4 softtabstop=4 tabstop=4 expandt
 set undofile undolevels=1000 udir=~/.vim/vimundo
 set dir=~/.vim/vimswapfiles//
 
+" code folding
+set foldmethod=syntax foldnestmax=2 nofoldenable foldlevel=2
+
+se laststatus=2 stl=%a\ %<%F\ %(%h%m%r%y%)\[%{&ff}\]\[buf:%n\]\ %=\ \ %(%b%)\ \|\ %(%c%V\ %l/%L\ %)%P
+
 " snippet variables
 let snips_author = "Santosh Kumar"
 let snips_email = "sntshkmr60@gmail.com"
@@ -26,6 +31,9 @@ let mapleader = ","
 
 nnoremap ; :
 vnoremap ; :
+
+" for sake of c-lang family
+inoremap <leader>; <C-o>A;
 
 nnoremap / /\v
 vnoremap / /\v
@@ -49,8 +57,8 @@ nnoremap <leader>v :vsplit ~/.vim/vimrc<cr>
 nnoremap <silent> <space> :set hlsearch!<cr>
 
 " comment leader is defined in each ftplugin
-noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
-noremap <silent> ,cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
+noremap <silent> ,c :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
+noremap <silent> ,c :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
 
 
 " I use vim-plug for plugin management
@@ -59,7 +67,7 @@ call plug#begin('~/.vim/plugs/')
 Plug 'SirVer/ultisnips'
 Plug 'jiangmiao/auto-pairs'
 Plug 'honza/vim-snippets', {'frozen': 1}
-
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 " Trigger configuration.
@@ -67,4 +75,5 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
-colorscheme industry
+colorscheme gruvbox
+set background=dark
