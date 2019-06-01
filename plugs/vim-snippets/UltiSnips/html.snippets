@@ -311,10 +311,6 @@ snippet li "list item" w
 <li>${0:${VISUAL}}</li>
 endsnippet
 
-snippet link "HTML <link>" w
-<link rel="${1:stylesheet}" href="${2:/css/master.css}" type="text/css" media="${3:screen}" title="${4:no title}" charset="${5:utf-8}"`!p x(snip)`>
-endsnippet
-
 snippet mailto "HTML <a mailto: >" w
 <a href="mailto:${1:joe@example.com}?subject=${2:feedback}">${3:email me}</a>
 endsnippet
@@ -431,12 +427,6 @@ endsnippet
 
 snippet strong "<strong>" w
 <strong>$1</strong>
-endsnippet
-
-snippet style "HTML <style>" w
-<style type="text/css" media="screen">
-	${0:${VISUAL}}
-</style>
 endsnippet
 
 snippet sub "<sub>" w
