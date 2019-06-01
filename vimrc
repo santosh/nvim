@@ -57,14 +57,15 @@ nnoremap <leader>v :vsplit ~/.vim/vimrc<cr>
 nnoremap <silent> <space> :set hlsearch!<cr>
 
 " comment leader is defined in each ftplugin
-noremap <silent> ,c :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
-noremap <silent> ,c :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
+noremap <silent> <leader>c :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
+noremap <silent> <leader>c :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
 
 
 " I use vim-plug for plugin management
 call plug#begin('~/.vim/plugs/')
 
 Plug 'SirVer/ultisnips'
+Plug 'scrooloose/nerdcommenter'
 Plug 'jiangmiao/auto-pairs'
 Plug 'honza/vim-snippets', {'frozen': 1}
 Plug 'morhetz/gruvbox'
