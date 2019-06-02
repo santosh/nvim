@@ -19,12 +19,12 @@ set dir=~/.vim/vimswapfiles//
 " code folding
 set foldmethod=syntax foldnestmax=2 nofoldenable foldlevel=2
 
-se laststatus=2 stl=%a\ %<%F\ %(%h%m%r%y%)\[%{&ff}\]\[buf:%n\]\ %=\ \ %(%b%)\ \|\ %(%c%V\ %l/%L\ %)%P
+set laststatus=2 stl=%a\ %<%F\ %(%h%m%r%y%)\[%{&ff}\]\[buf:%n\]\ %=\ \ %(%b%)\ \|\ %(%c%V\ %l/%L\ %)%P
 
-" snippet variables
-let snips_author = "Santosh Kumar"
-let snips_email = "sntshkmr60@gmail.com"
-let snips_github = "@santosh"
+" Some keybindings do similar action but are defined in their ftplugin
+" don't use them globally. These include
+" <F5>      : Run
+" <leader>d : Document
 
 " mappings
 let mapleader = ","
@@ -70,7 +70,14 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'jiangmiao/auto-pairs'
 Plug 'honza/vim-snippets', {'frozen': 1}
 Plug 'morhetz/gruvbox'
+
+Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
 call plug#end()
+
+" snippet config
+let snips_author = "Santosh Kumar"
+let snips_email = "sntshkmr60@gmail.com"
+let snips_github = "@santosh"
 
 " yegappan/mru config
 let MRU_File = "~/.vim/.mru_files"
