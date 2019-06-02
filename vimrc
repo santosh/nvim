@@ -65,11 +65,19 @@ noremap <silent> <leader>c :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,
 call plug#begin('~/.vim/plugs/')
 
 Plug 'SirVer/ultisnips'
+Plug 'yegappan/mru'
 Plug 'scrooloose/nerdcommenter'
 Plug 'jiangmiao/auto-pairs'
 Plug 'honza/vim-snippets', {'frozen': 1}
 Plug 'morhetz/gruvbox'
 call plug#end()
+
+" yegappan/mru config
+let MRU_File = "~/.vim/.mru_files"
+let MRU_Window_Height = 10
+let MRU_Max_Entries = 15
+nnoremap <leader>m :MRU<cr>
+inoremap <leader>m <esc>:MRU<cr>
 
 " Trigger configuration.
 let g:UltiSnipsExpandTrigger="<tab>"

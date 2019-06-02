@@ -2,3 +2,4 @@ plugs/
 .netrwhist
 vimundo/*
 vimswapfiles/*
+.mru_files
