@@ -64,6 +64,7 @@ noremap <silent> <leader>c :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,
 " I use vim-plug for plugin management
 call plug#begin('~/.vim/plugs/')
 
+Plug 'Valloric/YouCompleteMe'
 Plug 'SirVer/ultisnips'
 Plug 'yegappan/mru'
 Plug 'scrooloose/nerdcommenter'
@@ -73,6 +74,12 @@ Plug 'morhetz/gruvbox'
 
 Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
 call plug#end()
+
+" Valloric/YouCompleteMe config
+" prevent complete between UltiSnips <TAB>
+let g:ycm_key_list_select_completion = []
+let g:ycm_key_list_previous_completion = []
+
 
 " snippet config
 let snips_author = "Santosh Kumar"
@@ -90,6 +97,12 @@ inoremap <leader>m <esc>:MRU<cr>
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" vim-go configs
+let g:go_null_module_warning = 0  " disables gopls won't work outside GOPATH warning
 
 colorscheme gruvbox
 set background=dark
