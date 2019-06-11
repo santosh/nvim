@@ -103,6 +103,7 @@ let g:NERDSpaceDelims = 1
 
 " vim-go configs
 let g:go_null_module_warning = 0  " disables gopls won't work outside GOPATH warning
+au BufRead,BufNewFile *.gohtml set filetype=gohtmltmpl
 
 colorscheme gruvbox
 set background=dark
