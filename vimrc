@@ -69,8 +69,10 @@ Plug 'SirVer/ultisnips'
 Plug 'yegappan/mru'
 Plug 'scrooloose/nerdcommenter'
 Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-surround'
 Plug 'honza/vim-snippets', {'frozen': 1}
 Plug 'morhetz/gruvbox'
+Plug 'mattn/emmet-vim'
 
 Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
 call plug#end()
@@ -79,6 +81,8 @@ call plug#end()
 " prevent complete between UltiSnips <TAB>
 let g:ycm_key_list_select_completion = []
 let g:ycm_key_list_previous_completion = []
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 'preview'
 
 
 " snippet config
@@ -104,6 +108,11 @@ let g:NERDSpaceDelims = 1
 " vim-go configs
 let g:go_null_module_warning = 0  " disables gopls won't work outside GOPATH warning
 au BufRead,BufNewFile *.gohtml set filetype=gohtmltmpl
+
+" emmet-vim
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+let g:user_emmet_leader_key='<Tab>'
 
 colorscheme gruvbox
 set background=dark
