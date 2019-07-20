@@ -75,8 +75,6 @@ Plug 'honza/vim-snippets', {'frozen': 1}
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'rhysd/committia.vim'
-Plug 'int3/vim-extradite'
-Plug 'sodapopcan/vim-twiggy'
 Plug 'morhetz/gruvbox'
 Plug 'mattn/emmet-vim'
 
