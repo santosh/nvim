@@ -1,4 +1,14 @@
-set nocompatible number autowrite autowriteall
+" tell vim not to worry about vi compatibility
+set nocompatible
+
+" line numbers
+set number
+
+" auto-save when exiting (not need to :wq<cr>, just :q<cr>)
+set autowrite autowriteall
+
+" enable mouse selection and navigation
+set mouse=a " enable in [a]ll modes.
 
 " search as you type
 set incsearch
