@@ -13,8 +13,8 @@ set whichwrap+=<,>,[,],h,l
 set autoindent smartindent smarttab shiftwidth=4 softtabstop=4 tabstop=4 expandtab scrolloff=10 pastetoggle=<F7>
 
 " waste management
-set undofile undolevels=1000 udir=~/.vim/vimundo
-set dir=~/.vim/vimswapfiles//
+set undofile undolevels=1000 udir=~/.vim/temp/undo
+set dir=~/.vim/temp/backup//
 
 " code folding
 set foldmethod=syntax foldnestmax=2 nofoldenable foldlevel=2
