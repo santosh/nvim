@@ -7,8 +7,11 @@ set number
 " auto-save when exiting (not need to :wq<cr>, just :q<cr>)
 set autowrite autowriteall
 
-" enable mouse selection and navigation
-set mouse=a " enable in [a]ll modes.
+" no special buffer for vim, use system cliboard
+set clipboard=unnamed
+
+" let's enforce mouse on the name of tmux
+set mouse=a
 
 " search as you type
 set incsearch
