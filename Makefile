@@ -5,8 +5,8 @@ clean:
 
 config:
 	ln -sf ~/.vim/vimrc ~/.vimrc
-	mkdir ~/.vim/temp/undo
-	mkdir ~/.vim/temp/backup
+	mkdir -p ~/.vim/temp/undo
+	mkdir -p ~/.vim/temp/backup
 
 install: config
 	vim +PlugInstall +qall
