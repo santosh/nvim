@@ -5,6 +5,8 @@ clean:
 
 config:
 	ln -sf ~/.vim/vimrc ~/.vimrc
+	mkdir -p ~/.config/nvim
+	ln -sf ~/.vim/vimrc ~/.config/nvim/init.vim
 	mkdir -p ~/.vim/temp/undo
 	mkdir -p ~/.vim/temp/backup
 

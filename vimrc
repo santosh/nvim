@@ -23,7 +23,7 @@ set splitright splitbelow
 set whichwrap+=<,>,[,],h,l
 
 " Indentation; default 4; ftplugin override this, see after/ftplugin
-set autoindent smartindent smarttab shiftwidth=4 softtabstop=4 tabstop=4 expandtab scrolloff=10 pastetoggle=<F7>
+set autoindent smartindent smarttab shiftwidth=4 softtabstop=4 tabstop=4 expandtab scrolloff=15 pastetoggle=<F7>
 
 " waste management
 set undofile undolevels=1000 udir=~/.vim/temp/undo
@@ -82,6 +82,7 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'SirVer/ultisnips'
 Plug 'yegappan/mru'
 Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'honza/vim-snippets', {'frozen': 1}
@@ -121,6 +122,10 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
+
+" nerdtree config
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+map <C-n> :NERDTreeToggle<CR>
 
 " vim-go configs
 let g:go_null_module_warning = 0  " disables gopls won't work outside GOPATH warning
