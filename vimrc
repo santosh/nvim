@@ -78,7 +78,6 @@ noremap <silent> <leader>c :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,
 call plug#begin('~/.vim/plugs/')
 
 " Try to keep minimal
-Plug 'Valloric/YouCompleteMe'
 Plug 'SirVer/ultisnips'
 Plug 'yegappan/mru'
 Plug 'scrooloose/nerdcommenter'
@@ -88,7 +87,6 @@ Plug 'tpope/vim-surround'
 Plug 'honza/vim-snippets', {'frozen': 1}
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'rhysd/committia.vim'
 Plug 'morhetz/gruvbox'
 Plug 'mattn/emmet-vim'
 
