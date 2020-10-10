@@ -16,6 +16,8 @@ let b:comment_leader = '// '
 let g:go_fmt_command = "goimports"
 let g:go_fmt_autosave = 1
 
+let g:syntastic_go_checkers = ['go', 'golint', 'errcheck']
+
 " Extra syntax highlilghting; disable if vim running slow
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1

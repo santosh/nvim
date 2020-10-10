@@ -23,16 +23,29 @@ set splitright splitbelow
 set whichwrap+=<,>,[,],h,l
 
 " Indentation; default 4; ftplugin override this, see after/ftplugin
-set autoindent smartindent smarttab shiftwidth=4 softtabstop=4 tabstop=4 expandtab scrolloff=15 pastetoggle=<F7>
+set autoindent smartindent smarttab shiftwidth=4 softtabstop=4 tabstop=4 expandtab
 
-" waste management
+" line offset before window start to scroll
+set scrolloff=15 
+
+" enables paste mode (while in insert mode) which prevents hindering with autoindent
+set pastetoggle=<F7>
+
+" undofile enables undo over sessions
 set undofile undolevels=1000 udir=~/.vim/temp/undo
+
+" swap files keeps unsaved buffer data
 set dir=~/.vim/temp/backup//
 
 " code folding
 set foldmethod=syntax foldnestmax=2 nofoldenable foldlevel=2
 
+" one of the statusline I liked on the internet
 set laststatus=2 stl=%a\ %<%F\ %(%h%m%r%y%)\[%{&ff}\]\[buf:%n\]\ %=\ \ %(%b%)\ \|\ %(%c%V\ %l/%L\ %)%P
+
+
+
+" KEY MAPPINGS
 
 " Some keybindings do similar action but are defined in their ftplugin
 " don't use them globally. These include
@@ -57,16 +70,21 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" exit with double escase (tip: swap Escape and Caps Lock at system level)
 inoremap <silent> <esc><esc> <esc>:q<cr>
 nnoremap <silent> <esc><esc> :q<cr>
+
+" s for save, isn't that more natural
 nnoremap <silent> s :up<cr>
 
-" smart home key
+" first <Home> will go to first non whitespace character, second to first character
 nnoremap <expr> <Home> (col('.') == matchend(getline('.'), '^\s*')+1 ? '0' : '^')
 imap <Home> <C-o><Home>
 
+" convenient way to edit config files
 nnoremap <leader>v :vsplit ~/.vim/vimrc<cr>
 
+" enable/disable search highlight
 nnoremap <silent> <space> :set hlsearch!<cr>
 
 " comment leader is defined in each ftplugin
@@ -80,8 +98,8 @@ call plug#begin('~/.vim/plugs/')
 " Try to keep minimal
 Plug 'SirVer/ultisnips'
 Plug 'yegappan/mru'
-Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdcommenter'
+Plug 'preservim/nerdtree'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'honza/vim-snippets', {'frozen': 1}
@@ -92,19 +110,6 @@ Plug 'mattn/emmet-vim'
 
 Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
 call plug#end()
-
-" Valloric/YouCompleteMe config
-" prevent complete between UltiSnips <TAB>
-let g:ycm_key_list_select_completion = []
-let g:ycm_key_list_previous_completion = []
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_autoclose_preview_window_after_insertion = 'preview'
-
-
-" snippet config
-let snips_author = "Santosh Kumar"
-let snips_email = "sntshkmr60@gmail.com"
-let snips_github = "@santosh"
 
 " yegappan/mru config
 let MRU_File = "~/.vim/.mru_files"
