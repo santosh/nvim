@@ -1,6 +1,3 @@
-" tell vim not to worry about vi compatibility
-set nocompatible
-
 " line numbers
 set number
 
@@ -13,9 +10,6 @@ set clipboard=unnamed
 " let's enforce mouse on the name of tmux
 set mouse=a
 
-" search as you type
-set incsearch
-
 " don't split above or left
 set splitright splitbelow
 
@@ -23,7 +17,7 @@ set splitright splitbelow
 set whichwrap+=<,>,[,],h,l
 
 " Indentation; default 4; ftplugin override this, see after/ftplugin
-set autoindent smartindent smarttab shiftwidth=4 softtabstop=4 tabstop=4 expandtab
+set smartindent shiftwidth=4 softtabstop=4 tabstop=4 expandtab
 
 " line offset before window start to scroll
 set scrolloff=15 
@@ -32,10 +26,10 @@ set scrolloff=15
 set pastetoggle=<F7>
 
 " undofile enables undo over sessions
-set undofile undolevels=1000 udir=~/.vim/temp/undo
+set undofile undolevels=1000 udir=~/.config/nvim/temp/undo
 
 " swap files keeps unsaved buffer data
-set dir=~/.vim/temp/backup//
+set dir=~/.config/nvim/temp/backup//
 
 " code folding
 set foldmethod=syntax foldnestmax=2 nofoldenable foldlevel=2
@@ -43,7 +37,7 @@ set foldmethod=syntax foldnestmax=2 nofoldenable foldlevel=2
 " one of the statusline I liked on the internet
 set laststatus=2 stl=%a\ %<%F\ %(%h%m%r%y%)\[%{&ff}\]\[buf:%n\]\ %=\ \ %(%b%)\ \|\ %(%c%V\ %l/%L\ %)%P
 
-
+set guicursor=n-v-c-i:block
 
 " KEY MAPPINGS
 
@@ -82,7 +76,7 @@ nnoremap <expr> <Home> (col('.') == matchend(getline('.'), '^\s*')+1 ? '0' : '^'
 imap <Home> <C-o><Home>
 
 " convenient way to edit config files
-nnoremap <leader>v :vsplit ~/.vim/vimrc<cr>
+nnoremap <leader>v :vsplit ~/.config/nvim/init.vom<cr>
 
 " enable/disable search highlight
 nnoremap <silent> <space> :set hlsearch!<cr>
@@ -93,7 +87,7 @@ noremap <silent> <leader>c :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,
 
 
 " I use vim-plug for plugin management
-call plug#begin('~/.vim/plugs/')
+call plug#begin('~/.config/nvim/plugs/')
 
 " Try to keep minimal
 Plug 'SirVer/ultisnips'
@@ -112,7 +106,7 @@ Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
 call plug#end()
 
 " yegappan/mru config
-let MRU_File = "~/.vim/.mru_files"
+let MRU_File = "~/.config/nvim/.mru_files"
 let MRU_Window_Height = 10
 let MRU_Max_Entries = 15
 nnoremap <leader>m :MRU<cr>
@@ -140,4 +134,4 @@ autocmd FileType html,css EmmetInstall
 let g:user_emmet_leader_key='<Tab>'
 
 colorscheme gruvbox
-set background=dark
+

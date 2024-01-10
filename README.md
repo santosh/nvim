@@ -1,6 +1,6 @@
-# .vim
+# nvim config
 
-Config files for traditional vim and gvim I have been maintaining since I entered Linux world.
+Originally for traditional vim, and now for neovim, this repo contains my vim config files.
 
 ## Install
 
@@ -8,11 +8,11 @@ Config files for traditional vim and gvim I have been maintaining since I entere
 
 1. Clone the repo in your $HOME.
 
-    git clone github.com/santosh/.vim ~/.vim
+    git clone github.com/santosh/nvim ~/nvim
 
 2. Enter the repo and run `make install`.
 
-   cd ~/.vim && make install
+   cd ~/nvim && make install
 
 3. Wait for the installation to finish.
 
@@ -46,7 +46,7 @@ Other than my keybinding and config, I have these plugins working.
 
 In `after/ftplugin` directory, you'll find configs related to current filetype based localised settings, overriding the global ones. 
 
-Settings overrided are mosttly one or more of these:
+Settings overridden are mosttly one or more of these:
 
 - localised mapping to run the file from within vim
 - localised tabwidth and other tab related settings
