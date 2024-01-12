@@ -4,15 +4,19 @@ Originally for traditional vim, and now for neovim, this repo contains my vim co
 
 ## Install
 
+Still looking for the traditional vim config? They are available in the `last-vim-config-before-nvim` branch.
+
+    git clone -b last-vim-config-before-nvim github.com/santosh/nvim ~/.vim
+    cd ~/.vim && make install
 ### Linux/Mac
 
 1. Clone the repo in your $HOME.
 
-    git clone github.com/santosh/nvim ~/nvim
+    git clone github.com/santosh/nvim ~/.config/nvim
 
 2. Enter the repo and run `make install`.
 
-   cd ~/nvim && make install
+   cd ~/.config/nvim && make install
 
 3. Wait for the installation to finish.
 
